@@ -1,5 +1,5 @@
 Summary:	Polimorphic XML Parser for OCaml
-Summary(pl):	Polimorficzny Parser XML-a dla OCamla
+Summary(pl):	Polimorficzny analizator sk³adniowy XML-a dla OCamla
 Name:		ocaml-pxp
 Version:	1.1.5
 Release:	1
@@ -21,21 +21,22 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 PXP is a validating parser for XML 1.0 which has been written entirely
 in Objective Caml.
 
-PXP means "Polymorphic XML parser" and emphasizes its most useful
+PXP means "Polymorphic XML Parser" and emphasizes its most useful
 property: that the API is polymorphic and can be configured such that
 different objects are used to store different types of elements.
 
 %description -l pl
-PXP jest waliduj±cym parserem XML 1.0, napisanym w ca³o¶ci w OCamlu.
+PXP jest waliduj±cym analizatorem sk³adniowym XML-a 1.0, napisanym w
+ca³o¶ci w OCamlu.
 
-PXP oznacza "Polimorficzny Parser XML", co podkre¶la jego najbardziej
-u¿yteczn± w³asno¶æ: API jest polimorficzne i mo¿e byæ skonfigurowane
-tak, ¿e ró¿ne obiekty s± u¿ywane do przechowywania ró¿nych typów
-elementów.
+PXP oznacza "Polymorphic XML Parser" (polimorficzny analizator
+sk³adniowy XML-a), co podkre¶la jego najbardziej u¿yteczn± w³asno¶æ:
+API jest polimorficzne i mo¿e byæ skonfigurowane tak, ¿e ró¿ne obiekty
+s± u¿ywane do przechowywania ró¿nych typów elementów.
 
 %package devel
 Summary:	Polimorphic XML Parser for OCaml - development part
-Summary(pl):	Polimorficzny Parser XML-a dla OCamla - cze¶æ programistyczna
+Summary(pl):	Polimorficzny analizator sk³adniowy XML-a dla OCamla - cze¶æ programistyczna
 Group:		Development/Libraries
 %requires_eq	ocaml
 %requires_eq	ocaml-net-netstring-devel
@@ -50,18 +51,19 @@ property: that the API is polymorphic and can be configured such that
 different objects are used to store different types of elements.
 
 This package contains files needed to develop OCaml programs using
-this library.
+the PXP library.
 
 %description devel -l pl
-PXP jest waliduj±cym parserem XML 1.0, napisanym w ca³o¶ci w OCamlu.
+PXP jest waliduj±cym analizatorem sk³adniowym XML-a 1.0, napisanym w
+ca³o¶ci w OCamlu.
 
-PXP oznacza "Polimorficzny Parser XML", co podkre¶la jego najbardziej
-u¿yteczn± w³asno¶æ: API jest polimorficzne i mo¿e byæ skonfigurowane
-tak, ¿e ró¿ne obiekty s± u¿ywane do przechowywania ró¿nych typów
-elementów.
+PXP oznacza "Polymorphic XML Parser" (polimorficzny analizator
+sk³adniowy XML-a), co podkre¶la jego najbardziej u¿yteczn± w³asno¶æ:
+API jest polimorficzne i mo¿e byæ skonfigurowane tak, ¿e ró¿ne obiekty
+s± u¿ywane do przechowywania ró¿nych typów elementów.
 
 Pakiet ten zawiera pliki niezbêdne do tworzenia programów u¿ywaj±cych
-tej biblioteki.
+biblioteki PXP.
 
 %prep
 %setup -q -n pxp-%{version}
