@@ -8,6 +8,7 @@ Group:		Libraries
 Vendor:		Gerd Stolpmann <gerd@gerd-stolpmann.de>
 URL:		http://www.ocaml-programming.de/programming/pxp.html
 Source0:	http://www.ocaml-programming.de/packages/pxp-%{version}.tar.gz
+# Source0-md5:	f16bbb9842ba19892d67c128c93d730d
 Patch0:		%{name}-sub_lexeme.patch
 BuildRequires:	ocaml >= 3.04
 BuildRequires:	ocaml-net-netstring-devel
