@@ -1,15 +1,14 @@
 Summary:	Polimorphic XML Parser for OCaml
 Summary(pl):	Polimorficzny Parser XML-a dla OCamla
 Name:		ocaml-pxp
-Version:	1.1.4
-Release:	3
+Version:	1.1.5
+Release:	1
 License:	distributable
 Group:		Libraries
 Vendor:		Gerd Stolpmann <gerd@gerd-stolpmann.de>
 URL:		http://www.ocaml-programming.de/programming/pxp.html
+# Source0-md5:	d462c59148db685309bf9a05f939c184
 Source0:	http://www.ocaml-programming.de/packages/pxp-%{version}.tar.gz
-# Source0-md5:	f16bbb9842ba19892d67c128c93d730d
-Patch0:		%{name}-sub_lexeme.patch
 BuildRequires:	ocaml >= 3.04
 BuildRequires:	ocaml-net-netstring-devel
 BuildRequires:	ocaml-wlex-devel
@@ -66,7 +65,6 @@ tej biblioteki.
 
 %prep
 %setup -q -n pxp-%{version}
-%patch0 -p1
 
 %build
 ./configure \
