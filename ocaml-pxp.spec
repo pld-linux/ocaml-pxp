@@ -18,7 +18,10 @@ BuildRequires:	ocaml-findlib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-No main package.
+Polimorphic XML Parser for OCaml.
+
+%description -l pl
+Polimorficzny Parser XML-a dla OCamla.
 
 %package devel
 Summary:	Polimorphic XML Parser for OCaml - development part
