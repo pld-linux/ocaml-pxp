@@ -100,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/DEV doc/EXTENSIONS doc/README doc/RELEASE-NOTES doc/SPEC 
+%doc doc/DEV doc/EXTENSIONS doc/README doc/RELEASE-NOTES doc/SPEC
 %doc doc/design.txt LICENSE doc/manual/html
 %dir %{_libdir}/ocaml/pxp
 %{_libdir}/ocaml/pxp/*
