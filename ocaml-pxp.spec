@@ -2,7 +2,7 @@ Summary:	Polimorphic XML Parser for OCaml
 Summary(pl):	Polimorficzny Parser XML-a dla OCamla
 Name:		ocaml-pxp
 Version:	1.1.4
-Release:	1
+Release:	2
 License:	distributable
 Group:		Libraries
 Vendor:		Gerd Stolpmann <gerd@gerd-stolpmann.de>
@@ -18,10 +18,20 @@ BuildRequires:	ocaml-findlib
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Polimorphic XML Parser for OCaml.
+PXP is a validating parser for XML 1.0 which has been written entirely
+in Objective Caml.
+
+PXP means "Polymorphic XML parser" and emphasizes its most useful
+property: that the API is polymorphic and can be configured such that
+different objects are used to store different types of elements.
 
 %description -l pl
-Polimorficzny Parser XML-a dla OCamla.
+PXP jest waliduj±cym parserem XML 1.0, napisanym w ca³o¶ci w OCamlu.
+
+PXP oznacza "Polimorficzny Parser XML", co podkre¶la jego najbardziej
+u¿yteczn± w³asno¶æ: API jest polimorficzne i mo¿e byæ skonfigurowane
+tak, ¿e ró¿ne obiekty s± u¿ywane do przechowywania ró¿nych typów
+elementów.
 
 %package devel
 Summary:	Polimorphic XML Parser for OCaml - development part
@@ -32,10 +42,24 @@ Group:		Development/Libraries
 %requires_eq	ocaml-wlex-devel
 
 %description devel
+PXP is a validating parser for XML 1.0 which has been written entirely
+in Objective Caml.
+
+PXP means "Polymorphic XML parser" and emphasizes its most useful
+property: that the API is polymorphic and can be configured such that
+different objects are used to store different types of elements.
+
 This package contains files needed to develop OCaml programs using
 this library.
 
 %description devel -l pl
+PXP jest waliduj±cym parserem XML 1.0, napisanym w ca³o¶ci w OCamlu.
+
+PXP oznacza "Polimorficzny Parser XML", co podkre¶la jego najbardziej
+u¿yteczn± w³asno¶æ: API jest polimorficzne i mo¿e byæ skonfigurowane
+tak, ¿e ró¿ne obiekty s± u¿ywane do przechowywania ró¿nych typów
+elementów.
+
 Pakiet ten zawiera pliki niezbêdne do tworzenia programów u¿ywaj±cych
 tej biblioteki.
 
@@ -71,14 +95,13 @@ cd $dir
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-gzip -9nf doc/{DEV,EXTENSIONS,README,RELEASE-NOTES,SPEC,design.txt} LICENSE
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/*.gz *.gz doc/manual/html
+%doc doc/DEV doc/EXTENSIONS doc/README doc/RELEASE-NOTES doc/SPEC 
+%doc doc/design.txt LICENSE doc/manual/html
 %dir %{_libdir}/ocaml/pxp
 %{_libdir}/ocaml/pxp/*.cm[ixa]*
 %{_libdir}/ocaml/pxp/*.a
