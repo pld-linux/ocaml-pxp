@@ -1,18 +1,19 @@
+%define		ocaml_ver	3.09.1
 Summary:	Polimorphic XML Parser for OCaml
 Summary(pl):	Polimorficzny analizator sk³adniowy XML-a dla OCamla
 Name:		ocaml-pxp
 Version:	1.1.6
-Release:	5
+Release:	6
 License:	distributable
 Group:		Libraries
-Vendor:		Gerd Stolpmann <gerd@gerd-stolpmann.de>
 URL:		http://www.ocaml-programming.de/programming/pxp.html
 Source0:	http://www.ocaml-programming.de/packages/pxp-%{version}.tar.gz
 # Source0-md5:	8f1c26e348405fb7f064b4bc2584ab59
-BuildRequires:	ocaml >= 3.04
+BuildRequires:	ocaml >= %{ocaml_devel}
+BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-net-netstring-devel >= 1.1.1-2
 BuildRequires:	ocaml-wlex-devel
-BuildRequires:	ocaml-findlib
+BuildRequires:	sed >= 4.0
 %requires_eq	ocaml-wlex
 %requires_eq	ocaml-runtime
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -50,8 +51,8 @@ PXP means "Polymorphic XML parser" and emphasizes its most useful
 property: that the API is polymorphic and can be configured such that
 different objects are used to store different types of elements.
 
-This package contains files needed to develop OCaml programs using
-the PXP library.
+This package contains files needed to develop OCaml programs using the
+PXP library.
 
 %description devel -l pl
 PXP jest waliduj±cym analizatorem sk³adniowym XML-a 1.0, napisanym w
@@ -74,9 +75,9 @@ biblioteki PXP.
 	-with-lex-utf8 \
 	-with-wlex
 
-sed -e 's/-g//' Makefile.rules > Makefile.rules.tmp
-mv -f Makefile.rules.tmp Makefile.rules
-%{__make} all opt
+sed -i -e 's/-g//' Makefile.rules
+%{__make} -j1 \
+	all opt
 
 %install
 rm -rf $RPM_BUILD_ROOT
