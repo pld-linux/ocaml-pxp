@@ -1,9 +1,9 @@
-%define		ocaml_ver	3.09.1
+%define		ocaml_ver	1:3.09.1
 Summary:	Polimorphic XML Parser for OCaml
 Summary(pl):	Polimorficzny analizator sk³adniowy XML-a dla OCamla
 Name:		ocaml-pxp
 Version:	1.1.6
-Release:	6
+Release:	7
 License:	distributable
 Group:		Libraries
 URL:		http://www.ocaml-programming.de/programming/pxp.html
