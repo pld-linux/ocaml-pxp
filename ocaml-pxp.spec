@@ -1,6 +1,6 @@
 %define		ocaml_ver	1:3.09.2
 Summary:	Polimorphic XML Parser for OCaml
-Summary(pl):	Polimorficzny analizator sk≥adniowy XML-a dla OCamla
+Summary(pl.UTF-8):   Polimorficzny analizator sk≈Çadniowy XML-a dla OCamla
 Name:		ocaml-pxp
 Version:	1.1.6
 Release:	8
@@ -26,18 +26,18 @@ PXP means "Polymorphic XML Parser" and emphasizes its most useful
 property: that the API is polymorphic and can be configured such that
 different objects are used to store different types of elements.
 
-%description -l pl
-PXP jest waliduj±cym analizatorem sk≥adniowym XML-a 1.0, napisanym w
-ca≥o∂ci w OCamlu.
+%description -l pl.UTF-8
+PXP jest walidujƒÖcym analizatorem sk≈Çadniowym XML-a 1.0, napisanym w
+ca≈Ço≈õci w OCamlu.
 
 PXP oznacza "Polymorphic XML Parser" (polimorficzny analizator
-sk≥adniowy XML-a), co podkre∂la jego najbardziej uøyteczn± w≥asno∂Ê:
-API jest polimorficzne i moøe byÊ skonfigurowane tak, øe rÛøne obiekty
-s± uøywane do przechowywania rÛønych typÛw elementÛw.
+sk≈Çadniowy XML-a), co podkre≈õla jego najbardziej u≈ºytecznƒÖ w≈Çasno≈õƒá:
+API jest polimorficzne i mo≈ºe byƒá skonfigurowane tak, ≈ºe r√≥≈ºne obiekty
+sƒÖ u≈ºywane do przechowywania r√≥≈ºnych typ√≥w element√≥w.
 
 %package devel
 Summary:	Polimorphic XML Parser for OCaml - development part
-Summary(pl):	Polimorficzny analizator sk≥adniowy XML-a dla OCamla - cze∂Ê programistyczna
+Summary(pl.UTF-8):   Polimorficzny analizator sk≈Çadniowy XML-a dla OCamla - cze≈õƒá programistyczna
 Group:		Development/Libraries
 %requires_eq	ocaml
 %requires_eq	ocaml-net-netstring-devel
@@ -54,16 +54,16 @@ different objects are used to store different types of elements.
 This package contains files needed to develop OCaml programs using the
 PXP library.
 
-%description devel -l pl
-PXP jest waliduj±cym analizatorem sk≥adniowym XML-a 1.0, napisanym w
-ca≥o∂ci w OCamlu.
+%description devel -l pl.UTF-8
+PXP jest walidujƒÖcym analizatorem sk≈Çadniowym XML-a 1.0, napisanym w
+ca≈Ço≈õci w OCamlu.
 
 PXP oznacza "Polymorphic XML Parser" (polimorficzny analizator
-sk≥adniowy XML-a), co podkre∂la jego najbardziej uøyteczn± w≥asno∂Ê:
-API jest polimorficzne i moøe byÊ skonfigurowane tak, øe rÛøne obiekty
-s± uøywane do przechowywania rÛønych typÛw elementÛw.
+sk≈Çadniowy XML-a), co podkre≈õla jego najbardziej u≈ºytecznƒÖ w≈Çasno≈õƒá:
+API jest polimorficzne i mo≈ºe byƒá skonfigurowane tak, ≈ºe r√≥≈ºne obiekty
+sƒÖ u≈ºywane do przechowywania r√≥≈ºnych typ√≥w element√≥w.
 
-Pakiet ten zawiera pliki niezbÍdne do tworzenia programÛw uøywaj±cych
+Pakiet ten zawiera pliki niezbƒôdne do tworzenia program√≥w u≈ºywajƒÖcych
 biblioteki PXP.
 
 %prep
