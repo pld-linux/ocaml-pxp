@@ -1,6 +1,6 @@
 %define		ocaml_ver	1:3.09.2
 Summary:	Polimorphic XML Parser for OCaml
-Summary(pl.UTF-8):   Polimorficzny analizator składniowy XML-a dla OCamla
+Summary(pl.UTF-8):	Polimorficzny analizator składniowy XML-a dla OCamla
 Name:		ocaml-pxp
 Version:	1.1.6
 Release:	8
@@ -37,7 +37,7 @@ są używane do przechowywania różnych typów elementów.
 
 %package devel
 Summary:	Polimorphic XML Parser for OCaml - development part
-Summary(pl.UTF-8):   Polimorficzny analizator składniowy XML-a dla OCamla - cześć programistyczna
+Summary(pl.UTF-8):	Polimorficzny analizator składniowy XML-a dla OCamla - cześć programistyczna
 Group:		Development/Libraries
 %requires_eq	ocaml
 %requires_eq	ocaml-net-netstring-devel
