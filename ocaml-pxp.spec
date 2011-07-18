@@ -2,19 +2,20 @@
 Summary:	Polimorphic XML Parser for OCaml
 Summary(pl.UTF-8):	Polimorficzny analizator składniowy XML-a dla OCamla
 Name:		ocaml-pxp
-Version:	1.1.6
-Release:	11
+Version:	1.2.2
+Release:	1
 License:	distributable
 Group:		Libraries
-Source0:	http://www.ocaml-programming.de/packages/pxp-%{version}.tar.gz
-# Source0-md5:	8f1c26e348405fb7f064b4bc2584ab59
+Source0:	http://download.camlcity.org/download/pxp-%{version}.tar.gz
+# Source0-md5:	45ffb1cca15435ea95c613e38c20239c
 URL:		http://www.ocaml-programming.de/programming/pxp.html
 BuildRequires:	ocaml >= %{ocaml_devel}
 BuildRequires:	ocaml-findlib
+BuildRequires:	ocaml-ocamldoc-devel
 BuildRequires:	ocaml-net-netstring-devel >= 1.1.1-2
-BuildRequires:	ocaml-wlex-devel
+BuildRequires:	ocaml-ulex
 BuildRequires:	sed >= 4.0
-%requires_eq	ocaml-wlex
+%requires_eq	ocaml-ulex
 %requires_eq	ocaml-runtime
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -71,9 +72,10 @@ biblioteki PXP.
 
 %build
 ./configure \
-	-with-lex-iso88591 \
-	-with-lex-utf8 \
-	-with-wlex
+	-with-lex \
+	-with-ulex \
+	-without-wlex \
+	-with-pp
 
 sed -i -e 's/-g//' Makefile.rules
 %{__make} -j1 \
@@ -103,8 +105,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/ABOUT-FINDLIB doc/EXTENSIONS doc/README doc/RELEASE-NOTES doc/SPEC
-%doc doc/design.txt LICENSE doc/manual/html
+%doc doc/DEV doc/README doc/SPEC
+%doc doc/design.txt doc/manual/html
 %dir %{_libdir}/ocaml/pxp
 %{_libdir}/ocaml/pxp/*
 %{_examplesdir}/%{name}-%{version}
