@@ -12,8 +12,8 @@ URL:		http://projects.camlcity.org/projects/pxp.html
 BuildRequires:	ocaml >= %{ocaml_devel}
 BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-ocamldoc-devel
-BuildRequires:	ocaml-net-netstring-devel >= 1.1.1-2
-BuildRequires:	ocaml-net-netsys-devel
+BuildRequires:	ocaml-net-netstring-devel >= 3.6-2
+BuildRequires:	ocaml-net-netsys-devel >= 3.6-2
 BuildRequires:	ocaml-ulex
 BuildRequires:	sed >= 4.0
 %requires_eq	ocaml-ulex
@@ -106,7 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/DEV doc/README doc/SPEC
+%doc doc/README doc/SPEC
 %doc doc/design.txt doc/manual/html
 %dir %{_libdir}/ocaml/pxp
 %{_libdir}/ocaml/pxp/*
