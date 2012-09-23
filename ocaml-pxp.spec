@@ -13,6 +13,7 @@ BuildRequires:	ocaml >= %{ocaml_devel}
 BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-ocamldoc-devel
 BuildRequires:	ocaml-net-netstring-devel >= 1.1.1-2
+BuildRequires:	ocaml-net-netsys-devel
 BuildRequires:	ocaml-ulex
 BuildRequires:	sed >= 4.0
 %requires_eq	ocaml-ulex
