@@ -1,15 +1,23 @@
-%define		ocaml_ver	1:3.09.2
+#
+# Conditional build:
+%bcond_without	ocaml_opt	# skip building native optimized binaries (bytecode is always built)
+
+# not yet available on x32 (ocaml 4.02.1), remove when upstream will support it
+%ifnarch %{ix86} %{x8664} arm aarch64 ppc sparc sparcv9
+%undefine	with_ocaml_opt
+%endif
+
 Summary:	Polimorphic XML Parser for OCaml
 Summary(pl.UTF-8):	Polimorficzny analizator składniowy XML-a dla OCamla
 Name:		ocaml-pxp
 Version:	1.2.4
-Release:	1
+Release:	2
 License:	distributable
 Group:		Libraries
 Source0:	http://download.camlcity.org/download/pxp-%{version}.tar.gz
 # Source0-md5:	bd6f7608797cbcb44d4495d92e69f9c6
 URL:		http://projects.camlcity.org/projects/pxp.html
-BuildRequires:	ocaml >= %{ocaml_devel}
+BuildRequires:	ocaml >= 1:3.09.2
 BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-ocamldoc-devel
 BuildRequires:	ocaml-net-netstring-devel >= 3.6-2
@@ -80,7 +88,7 @@ biblioteki PXP.
 
 sed -i -e 's/-g//' Makefile.rules
 %{__make} -j1 \
-	all opt
+	all %{?with_ocaml_opt:opt}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -96,7 +104,6 @@ for f in * ; do
 	fi
 done
 cd $dir
-rm $RPM_BUILD_ROOT%{_libdir}/ocaml/pxp/*.{o,mli}
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
@@ -109,6 +116,13 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/README doc/SPEC
 %doc doc/design.txt doc/manual/html
 %dir %{_libdir}/ocaml/pxp
-%{_libdir}/ocaml/pxp/*
+%{_libdir}/ocaml/pxp/*.cm[xi]
+%{_libdir}/ocaml/pxp/*.cma
+%{_libdir}/ocaml/pxp/*.cmo
+%{_libdir}/ocaml/pxp/*.mli
+%if %{with ocaml_opt}
+%{_libdir}/ocaml/pxp/*.[ao]
+%{_libdir}/ocaml/pxp/*.cmxa
+%endif
 %{_examplesdir}/%{name}-%{version}
 %{_libdir}/ocaml/site-lib/*
