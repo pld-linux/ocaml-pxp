@@ -10,20 +10,23 @@
 Summary:	Polimorphic XML Parser for OCaml
 Summary(pl.UTF-8):	Polimorficzny analizator składniowy XML-a dla OCamla
 Name:		ocaml-pxp
-Version:	1.2.4
-Release:	4
+Version:	1.2.9
+Release:	1
 License:	distributable
 Group:		Libraries
 Source0:	http://download.camlcity.org/download/pxp-%{version}.tar.gz
-# Source0-md5:	bd6f7608797cbcb44d4495d92e69f9c6
+# Source0-md5:	8002253eade813b8355500f4c59f8da8
 URL:		http://projects.camlcity.org/projects/pxp.html
 BuildRequires:	ocaml >= 1:3.09.2
+BuildRequires:	ocaml-camlp4
 BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-ocamldoc-devel
 BuildRequires:	ocaml-net-netstring-devel >= 3.6-2
 BuildRequires:	ocaml-net-netsys-devel >= 3.6-2
+BuildRequires:	ocaml-net-netunidata-devel
 BuildRequires:	ocaml-ulex
 BuildRequires:	sed >= 4.0
+BuildConflicts:	ocaml-wlex-devel
 %requires_eq	ocaml-ulex
 %requires_eq	ocaml-runtime
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,7 +54,6 @@ Summary(pl.UTF-8):	Polimorficzny analizator składniowy XML-a dla OCamla - cześ
 Group:		Development/Libraries
 %requires_eq	ocaml
 %requires_eq	ocaml-net-netstring-devel
-%requires_eq	ocaml-wlex-devel
 
 %description devel
 PXP is a validating parser for XML 1.0 which has been written entirely
