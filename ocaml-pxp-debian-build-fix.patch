@@ -1,0 +1,56 @@
+From: Christopher Cramer <tsuyoshi@yumegakanau.org>
+Date: Thu, 21 Nov 2019 13:27:08 +0100
+Subject: Fix compilation with OCaml 4.08.1
+
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=944593
+---
+ src/pxp-engine/pxp_lexing.mli  | 6 +++---
+ tools/src/odoc/Makefile        | 2 +-
+ tools/src/odoc/chtml_ocaml4.ml | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/src/pxp-engine/pxp_lexing.mli b/src/pxp-engine/pxp_lexing.mli
+index 5dc3497..ffa6e34 100644
+--- a/src/pxp-engine/pxp_lexing.mli
++++ b/src/pxp-engine/pxp_lexing.mli
+@@ -10,11 +10,11 @@
+ 
+ type lexbuf = Lexing.lexbuf
+ 
+-val from_channel : in_channel -> lexbuf
++val from_channel : ?with_positions:bool -> in_channel -> lexbuf
+ 
+-val from_string : string -> lexbuf
++val from_string : ?with_positions:bool -> string -> lexbuf
+ 
+-val from_function : (Bytes.t -> int -> int) -> lexbuf
++val from_function : ?with_positions:bool -> (Bytes.t -> int -> int) -> lexbuf
+ 
+ val lexeme : lexbuf -> string
+ 
+diff --git a/tools/src/odoc/Makefile b/tools/src/odoc/Makefile
+index 071bf8d..67dbeb4 100644
+--- a/tools/src/odoc/Makefile
++++ b/tools/src/odoc/Makefile
+@@ -3,7 +3,7 @@ include $(TOP_DIR)/Makefile.rules
+ 
+ SRC = chtml.ml
+ OBJ = $(SRC:.ml=.cmo)
+-OCAMLC_OPTIONS += -I +ocamldoc
++OCAMLC_OPTIONS += -I +ocamldoc -I +compiler-libs
+ CLEAN_LIST += chtml.ml
+ 
+ .PHONY: all
+diff --git a/tools/src/odoc/chtml_ocaml4.ml b/tools/src/odoc/chtml_ocaml4.ml
+index dbf8caf..667930f 100644
+--- a/tools/src/odoc/chtml_ocaml4.ml
++++ b/tools/src/odoc/chtml_ocaml4.ml
+@@ -34,7 +34,7 @@ open Printf
+ open Odoc_info
+ open Module
+ 
+-module StringSet = Odoc_html.StringSet
++module StringSet = Odoc_html.String.Set
+ 
+ 
+ let word_re = Str.regexp "[ \t\r\n]+"
