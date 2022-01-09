@@ -52,7 +52,7 @@ są używane do przechowywania różnych typów elementów.
 
 %package devel
 Summary:	Polimorphic XML Parser for OCaml - development part
-Summary(pl.UTF-8):	Polimorficzny analizator składniowy XML-a dla OCamla - cześć programistyczna
+Summary(pl.UTF-8):	Polimorficzny analizator składniowy XML-a dla OCamla - część programistyczna
 Group:		Development/Libraries
 %requires_eq	ocaml
 %requires_eq	ocaml-net-netstring-devel
